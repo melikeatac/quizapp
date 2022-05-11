@@ -18,6 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function App() {
+  const [load, setLoad] = useState(false);
   const [state, setState] = useState({
     value: 0,
     isFinished: false,
@@ -182,14 +183,12 @@ function App() {
     }
   };
 
-  const [load, setLoad] = useState(false);
-
   function reloadPage() {
     setLoad(
       true,
       setInterval(() => {
         window.location.reload();
-      }, 4000)
+      }, 3000)
     );
   }
   return (
